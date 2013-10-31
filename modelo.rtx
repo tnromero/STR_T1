@@ -1,0 +1,16 @@
+[PROJECT]
+Name=Exemplo-modelo
+Description=
+
+[CPUS]
+CPU name=
+
+[CPU name]
+Description=
+Model=Windows
+Kernel=".\\modelo.cpu"
+Applications=APPS CPU name
+
+[APPS CPU name]
+Application name=".\\modelo.app"
+
