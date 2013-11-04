@@ -11,15 +11,21 @@
 extern circulo bola;
 extern quadrilatero player1;
 extern quadrilatero player2;
+extern int scoreP1;
+extern int scoreP2;
+
+#define VELOCIDADE 75 //0-99
 
 void task_Mov_Bola(void);
 
 void task_Mov_Bola(void)
 {
-	int incX, incY;
+	int incX, incY, direcaoInicial;
 	srand(time(NULL));
-	incX=(rand()%5)+1;
-	incY=(rand()%5)+1;
+	direcaoInicial = (rand()%2)==0?1:-1;
+	incX=((rand()%3)+3)*direcaoInicial;
+	incY=((rand()%3)+3)*direcaoInicial;
+	
 	while(1)
 	{
 		// X
@@ -38,10 +44,25 @@ void task_Mov_Bola(void)
 		
 			}else if(bola.v.x+bola.raio+incX<594) {
 				bola.v.x+=incX;
-		
+				if(bola.v.x+bola.raio>585){
+					scoreP1++;
+					bola.v.x=299;
+					bola.v.y=199;
+					incX=-((rand()%3)+3);
+					incY=((rand()%3)+3);
+				}
 			} else {
 				while(bola.v.x+bola.raio<594-1) {
 					bola.v.x++;
+					if(bola.v.x+bola.raio>585){
+						scoreP1++;
+						bola.v.x=299;
+						bola.v.y=199;
+						incX=-((rand()%3)+3);
+						incY=((rand()%3)+3);
+		
+						break;
+					}
 				}
 				incX=-incX;
 			}
@@ -61,10 +82,25 @@ void task_Mov_Bola(void)
 		
 			}else if(bola.v.x-bola.raio+incX>5) {
 				bola.v.x+=incX;
+				if(bola.v.x-bola.raio<10){
+					scoreP2++;
+					bola.v.x=299;
+					bola.v.y=199;
+					incX=((rand()%3)+3);
+					incY=((rand()%3)+3);
+				}
 		
 			} else {
 				while(bola.v.x-bola.raio>5+1) {
 					bola.v.x--;
+					if(bola.v.x-bola.raio<10){
+						scoreP2++;
+						bola.v.x=299;
+						bola.v.y=199;
+						incX=((rand()%3)+3);
+						incY=((rand()%3)+3);
+						break;	
+					}
 				}
 				incX=-incX;
 			}
@@ -90,7 +126,7 @@ void task_Mov_Bola(void)
 				incY=-incY;
 			}
 		}
-		KS_SleepTask(SYSTIMER, (TICKS)100/CLKTICK);
+		KS_SleepTask(SYSTIMER, (TICKS)(100 - VELOCIDADE)/CLKTICK);
 	}
 	KS_TerminateTask(SELFTASK);
 }

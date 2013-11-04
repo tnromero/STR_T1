@@ -4,11 +4,16 @@
 #include "kproject.h"
 #include "objetos.h"
 #include "graphics.h"
+#include <stdio.h>
 
 extern tabuleiro t;
 extern quadrilatero player1;
 extern quadrilatero player2;
 extern circulo bola;
+extern int scoreP1;
+extern int scoreP2;
+char SscoreP1[3];
+char SscoreP2[3];
 
 void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg);
 
@@ -18,8 +23,19 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 	setbkcolor(BLACK);
 	cleardevice();
 	
+	// Score
+	sprintf(SscoreP1, "%d", scoreP1);
+	sprintf(SscoreP2, "%d", scoreP2);
+	outtextxy(300,50,"Score:");
+	outtextxy(300,60,"---------------");
+	outtextxy(300,70,"Player 1:");
+	outtextxy(380,70,SscoreP1);
+	outtextxy(300,90,"Player 2:");
+	outtextxy(380,90,SscoreP2);
+
 	// Cor tabuleiro
 	setfillstyle(t.filltype, t.fillcolor);
+
 	// Lados Tabuleiro
 	for(int i=0;i<4;i++)
 	{

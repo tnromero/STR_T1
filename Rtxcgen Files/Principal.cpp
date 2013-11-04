@@ -17,6 +17,10 @@ quadrilatero player1;
 quadrilatero player2;
 circulo bola;
 bool quit = false;
+int scoreP1 = 0;
+int scoreP2 = 0;
+
+#define VELOCIDADE 15 // 0 - 99
 
 void task_Principal(void);
 
@@ -44,57 +48,55 @@ void task_Principal(void)
 		if(kbhit())
 		{
 			key = getch();
-			switch(key)
+			// w 87 e 119
+			if(GetKeyState(87) & 0x8000)
 			{
-				// q
-				case 81:
-				case 113:
-					quit=true;
-					break;
-				// // w
-				case 87:
-				case 119:
-					KS_TestMutxW(M_P1);
-					if(player1.v1.y-1>5) {
-						player1.v1.y--;
-						player1.v2.y--;
-					}
-					KS_ReleaseMutx(M_P1);
-					break;
-				// s
-				case 83:
-				case 115:
-					KS_TestMutxW(M_P1);
-					if(player1.v2.y+1<394) {
-						player1.v1.y++;
-						player1.v2.y++;
-					}
-					KS_ReleaseMutx(M_P1);
-					break;
-				// i
-				case 73:
-				case 105:
-					KS_TestMutxW(M_P2);
-					if(player2.v1.y-1>5) {
-						player2.v1.y--;
-						player2.v2.y--;
-					}
-					KS_ReleaseMutx(M_P2);
-					break;
-				// k
-				case 75:
-				case 107:
-					KS_TestMutxW(M_P2);
-					if(player2.v2.y+1<394) {
-						player2.v1.y++;
-						player2.v2.y++;
-					}
-					KS_ReleaseMutx(M_P2);
-					break;
+				KS_TestMutxW(M_P1);
+				if(player1.v1.y-1>5)
+				{
+					player1.v1.y-=VELOCIDADE;
+					player1.v2.y-=VELOCIDADE;
+				}
+				KS_ReleaseMutx(M_P1);
 			}
-		}
-		else
-		{
+			// s 83 e 115
+			if(GetKeyState(83) & 0x8000)
+			{
+				KS_TestMutxW(M_P1);
+				if(player1.v2.y+1<394)
+				{
+					player1.v1.y+=VELOCIDADE;
+					player1.v2.y+=VELOCIDADE;
+				}
+				KS_ReleaseMutx(M_P1);
+			}
+			// i 73 e 105
+			if(GetKeyState(73) & 0x8000)
+			{
+				KS_TestMutxW(M_P2);
+				if(player2.v1.y-1>5)
+				{
+					player2.v1.y-=VELOCIDADE;
+					player2.v2.y-=VELOCIDADE;
+				}
+				KS_ReleaseMutx(M_P2);
+			}
+			// k 75 e 107
+			if(GetKeyState(75) & 0x8000)
+			{
+				KS_TestMutxW(M_P2);
+				if(player2.v2.y+1<394)
+				{
+					player2.v1.y+=VELOCIDADE;
+					player2.v2.y+=VELOCIDADE;
+				}
+				KS_ReleaseMutx(M_P2);
+			}
+			// q 81 e 113
+			if(GetKeyState(81) & 0x8000)
+			{
+				quit=true;
+			}
 		}
 		KS_ScheduleThread(DISPLAY);
 		/*setbkcolor(BLACK);
