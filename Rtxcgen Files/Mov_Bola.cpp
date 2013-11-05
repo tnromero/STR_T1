@@ -6,6 +6,7 @@
 #include "kproject.h"
 #include "objetos.h"
 #include "graphics.h"
+#include "Util.h"
 #include <time.h>
 
 extern circulo bola;
@@ -14,14 +15,12 @@ extern quadrilatero player2;
 extern int scoreP1;
 extern int scoreP2;
 
-#define VELOCIDADE 75 //0-99
-
 void task_Mov_Bola(void);
 
 void task_Mov_Bola(void)
 {
 	int incX, incY, direcaoInicial;
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	direcaoInicial = (rand()%2)==0?1:-1;
 	incX=((rand()%3)+3)*direcaoInicial;
 	incY=((rand()%3)+3)*direcaoInicial;
@@ -29,12 +28,13 @@ void task_Mov_Bola(void)
 	while(1)
 	{
 		// X
+		// X
 		if(incX>0) {
 			if(	(bola.v.y+bola.raio<=player2.v2.y && bola.v.y-bola.raio>=player2.v1.y) 
 					&& (bola.v.x+bola.raio+incX>=player2.v1.x) ) {
 				
 				if(bola.v.x+bola.raio+incX==player2.v1.x) {
-					bola.v.x+incX;
+					bola.v.x+=incX;
 				} else {
 					while(bola.v.x+bola.raio<player2.v1.x) {
 						bola.v.x++;
@@ -72,7 +72,7 @@ void task_Mov_Bola(void)
 					&& (bola.v.x-bola.raio+incX<=player1.v2.x) ) {
 				
 				if(bola.v.x-bola.raio+incX==player2.v2.x) {
-					bola.v.x+incX;
+					bola.v.x+=incX;
 				} else {
 					while(bola.v.x-bola.raio>player2.v1.x) {
 						bola.v.x--;
@@ -106,27 +106,28 @@ void task_Mov_Bola(void)
 			}
 		}
 		
+		// Movimentos Y
 		// Y
 		if(incY>0) {
-			if(bola.v.y+bola.raio+incY<394) {
+			if(bola.v.y+bola.raio+incY<INFERIOR) {
 				bola.v.y+=incY;
 			} else {
-				while(bola.v.y+bola.raio<394-1) {
+				while(bola.v.y+bola.raio<INFERIOR-1) {
 					bola.v.y++;
 				}
 				incY=-incY;
 			}
 		} else {
-			if(bola.v.y-bola.raio+incY>5) {
+			if(bola.v.y-bola.raio+incY>TOPO) {
 				bola.v.y+=incY;
 			} else {
-				while(bola.v.y-bola.raio>5+1) {
+				while(bola.v.y-bola.raio>TOPO+1) {
 					bola.v.y--;
 				}
 				incY=-incY;
 			}
 		}
-		KS_SleepTask(SYSTIMER, (TICKS)(100 - VELOCIDADE)/CLKTICK);
+		KS_SleepTask(SYSTIMER, (TICKS)(100)/CLKTICK);
 	}
 	KS_TerminateTask(SELFTASK);
 }

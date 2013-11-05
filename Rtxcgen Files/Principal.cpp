@@ -11,7 +11,9 @@
 #include "kproject.h"
 #include "objetos.h"
 #include "graphics.h"
+#include "Util.h"
 
+// Variaveis Globais
 tabuleiro t;
 quadrilatero player1;
 quadrilatero player2;
@@ -20,7 +22,7 @@ bool quit = false;
 int scoreP1 = 0;
 int scoreP2 = 0;
 
-#define VELOCIDADE 15 // 0 - 99
+
 
 void task_Principal(void);
 
@@ -52,10 +54,15 @@ void task_Principal(void)
 			if(GetKeyState(87) & 0x8000)
 			{
 				KS_TestMutxW(M_P1);
-				if(player1.v1.y-1>5)
+				if(player1.v1.y-INC_PLAYER>TOPO)
 				{
-					player1.v1.y-=VELOCIDADE;
-					player1.v2.y-=VELOCIDADE;
+					player1.v1.y-=INC_PLAYER;
+					player1.v2.y-=INC_PLAYER;
+				}
+				else
+				{
+					player1.v2.y-=(player1.v1.y-TOPO-1);
+					player1.v1.y-=(player1.v1.y-TOPO-1);
 				}
 				KS_ReleaseMutx(M_P1);
 			}
@@ -63,10 +70,15 @@ void task_Principal(void)
 			if(GetKeyState(83) & 0x8000)
 			{
 				KS_TestMutxW(M_P1);
-				if(player1.v2.y+1<394)
+				if(player1.v2.y+INC_PLAYER<INFERIOR)
 				{
-					player1.v1.y+=VELOCIDADE;
-					player1.v2.y+=VELOCIDADE;
+					player1.v1.y+=INC_PLAYER;
+					player1.v2.y+=INC_PLAYER;
+				}
+				else
+				{
+					player1.v1.y+=(INFERIOR - player1.v2.y -1);
+					player1.v2.y+=(INFERIOR - player1.v2.y -1);
 				}
 				KS_ReleaseMutx(M_P1);
 			}
@@ -74,10 +86,15 @@ void task_Principal(void)
 			if(GetKeyState(73) & 0x8000)
 			{
 				KS_TestMutxW(M_P2);
-				if(player2.v1.y-1>5)
+				if(player2.v1.y-INC_PLAYER>TOPO)
 				{
-					player2.v1.y-=VELOCIDADE;
-					player2.v2.y-=VELOCIDADE;
+					player2.v1.y-=INC_PLAYER;
+					player2.v2.y-=INC_PLAYER;
+				}
+				else
+				{
+					player2.v2.y-=(player2.v1.y-TOPO-1);
+					player2.v1.y-=(player2.v1.y-TOPO-1);
 				}
 				KS_ReleaseMutx(M_P2);
 			}
@@ -85,10 +102,15 @@ void task_Principal(void)
 			if(GetKeyState(75) & 0x8000)
 			{
 				KS_TestMutxW(M_P2);
-				if(player2.v2.y+1<394)
+				if(player2.v2.y+INC_PLAYER<INFERIOR)
 				{
-					player2.v1.y+=VELOCIDADE;
-					player2.v2.y+=VELOCIDADE;
+					player2.v1.y+=INC_PLAYER;
+					player2.v2.y+=INC_PLAYER;
+				}
+				else
+				{
+					player2.v1.y+=(INFERIOR - player2.v2.y -1);
+					player2.v2.y+=(INFERIOR - player2.v2.y -1);
 				}
 				KS_ReleaseMutx(M_P2);
 			}
@@ -99,16 +121,6 @@ void task_Principal(void)
 			}
 		}
 		KS_ScheduleThread(DISPLAY);
-		/*setbkcolor(BLACK);
-		cleardevice();
-		setfillstyle(q.filltype, q.fillcolor);
-		bar(	(int)q.x+i - q.width/2,
-				(int)q.y+i - q.height/2,
-				(int)q.x+i + q.width/2,
-				(int)q.y+i + q.height/2);
-		i++;*/
-		
-		
 		KS_SleepTask(SYSTIMER, (TICKS)100/CLKTICK);
 	}
 	closegraph();

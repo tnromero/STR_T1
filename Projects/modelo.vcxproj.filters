@@ -108,9 +108,6 @@
     <ClCompile Include="..\Rtxcgen Files\Tabuleiro.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Keyboard.cpp">
-      <Filter>RTXCgen Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Rtxcgen Files\Player1.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
@@ -189,6 +186,9 @@
       <Filter>RTXCgen Files\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\rtxcgen files\graphics.h">
+      <Filter>RTXCgen Files\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rtxcgen Files\Util.h">
       <Filter>RTXCgen Files\Include</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,6 @@
 // ktask.h - RTXC Quadros Version 1.0.0 Task include file
 
-// This file was generated on 11/03/2013 22:03:50 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/05/2013 13:59:28 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -31,7 +31,7 @@
 // Begin - Revision Information, Top
 // End - Revision Information, Top
 
-#define NTASKS 9
+#define NTASKS 8
 
 #define DNTASKS 0
 
@@ -39,11 +39,10 @@
 #define CONITASK 2
 #define Principal 3
 #define Tabuleiro 4
-#define Keyboard 5
-#define Player1 6
-#define Player2 7
-#define Bola 8
-#define Mov_Bola 9
+#define Player1 5
+#define Player2 6
+#define Bola 7
+#define Mov_Bola 8
 
 #define TASK_NAMMAX 20
 

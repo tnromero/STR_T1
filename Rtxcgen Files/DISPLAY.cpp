@@ -24,14 +24,16 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 	cleardevice();
 	
 	// Score
-	sprintf(SscoreP1, "%d", scoreP1);
-	sprintf(SscoreP2, "%d", scoreP2);
-	outtextxy(300,50,"Score:");
-	outtextxy(300,60,"---------------");
-	outtextxy(300,70,"Player 1:");
-	outtextxy(380,70,SscoreP1);
-	outtextxy(300,90,"Player 2:");
-	outtextxy(380,90,SscoreP2);
+	sprintf_s(SscoreP1, "%2d", scoreP1);
+	sprintf_s(SscoreP2, "%2d", scoreP2);
+	setfillstyle(SOLID_FILL, 10);
+	settextstyle(10, HORIZ_DIR, 2);
+	outtextxy(10,450,"Score:");
+	outtextxy(10,470,"---------------");
+	outtextxy(10,500,"Player 1:");
+	outtextxy(150,500,SscoreP1);
+	outtextxy(10,530,"Player 2:");
+	outtextxy(150,530,SscoreP2);
 
 	// Cor tabuleiro
 	setfillstyle(t.filltype, t.fillcolor);
@@ -47,11 +49,14 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 	setfillstyle(player1.filltype, player1.fillcolor);
 	bar(	player1.v1.x, player1.v1.y,
 			player1.v2.x, player1.v2.y);
+	
 	// Player 2
 	setfillstyle(player2.filltype, player2.fillcolor);
 	bar(	player2.v1.x, player2.v1.y,
 			player2.v2.x, player2.v2.y);
+	
 	// Bola
 	setfillstyle(bola.filltype, bola.fillcolor);
 	circle(bola.v.x, bola.v.y, bola.raio);
+	
 }
