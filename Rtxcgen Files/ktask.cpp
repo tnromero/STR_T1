@@ -1,6 +1,6 @@
 // ktask.cpp - RTXC Quadros Version 1.0.0 Task definitions
 
-// This file was generated on 11/05/2013 23:25:55 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/06/2013 11:51:39 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -47,8 +47,6 @@ static const char taskname[1 + NTASKS][TASK_NAMMAX + 1] =
    ,"Player1"   // 5 - 
    ,"Player2"   // 6 - 
    ,"Bola"   // 7 - 
-   ,"Mov_Bola"   // 8 - 
-   ,"Teclado"   // 9 - 
 };
 #endif // } HAS_TaskStaticNames
 
@@ -106,14 +104,6 @@ extern void task_Player2(void);
 static STK_ALIGNTYPE stack7[STKSZ7 / SIZEOF_STK_ALIGNTYPE];
 extern void task_Bola(void);
 
-#define STKSZ8 512 // 8 Mov_Bola - 
-static STK_ALIGNTYPE stack8[STKSZ8 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Mov_Bola(void);
-
-#define STKSZ9 512 // 9 Teclado - 
-static STK_ALIGNTYPE stack9[STKSZ9 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Teclado(void);
-
 
 // Starting Order Task List
 extern const TASK startls[] =
@@ -125,8 +115,6 @@ extern const TASK startls[] =
    Player1, // (10) 5 - 
    Player2, // (10) 6 - 
    Bola, // (10) 7 - 
-   Mov_Bola, // (10) 8 - 
-   Teclado, // (10) 9 - 
    0 // Null-terminated Task List
 };
 
@@ -141,8 +129,6 @@ extern const TASKPROP taskprop[1 + NTASKS] =
    ,{  task_Player1, (char *)stack5, STKSZ5, 9 } // 5 Player1 - 
    ,{  task_Player2, (char *)stack6, STKSZ6, 9 } // 6 Player2 - 
    ,{  task_Bola, (char *)stack7, STKSZ7, 9 } // 7 Bola - 
-   ,{  task_Mov_Bola, (char *)stack8, STKSZ8, 10 } // 8 Mov_Bola - 
-   ,{  task_Teclado, (char *)stack9, STKSZ9, 10 } // 9 Teclado - 
 };
 
 // Begin - Revision Information, Bottom

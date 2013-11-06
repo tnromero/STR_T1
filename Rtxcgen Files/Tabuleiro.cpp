@@ -40,5 +40,6 @@ void task_Tabuleiro(void)
 	t.lado[3].v1.y=INFERIOR;
 	t.lado[3].v2.x=EXT_DIREITA;
 	t.lado[3].v2.y=EXT_INFERIOR;
+	
 	KS_TerminateTask(SELFTASK);
 }

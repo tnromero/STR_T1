@@ -9,7 +9,7 @@
 #include "Util.h"
 #include <time.h>
 
-extern circulo bola;
+extern circulo bola[5];
 extern quadrilatero player1;
 extern quadrilatero player2;
 extern int scoreP1;
@@ -19,45 +19,52 @@ void task_Mov_Bola(void);
 
 void task_Mov_Bola(void)
 {
+	int *i= (int*) KS_GetTaskEnvArg (SELFTASK);
+	
 	int incX, incY, direcaoInicial;
 	srand((unsigned int)time(NULL));
 	direcaoInicial = (rand()%2)==0?1:-1;
 	incX=((rand()%3)+3)*direcaoInicial;
 	incY=((rand()%3)+3)*direcaoInicial;
 	
+	bola[*i].v.x=299;
+	bola[*i].v.y=199;
+	bola[*i].raio=10;
+	bola[*i].fillcolor=WHITE;
+	
 	while(1)
 	{
 		// X
 		// X
 		if(incX>0) {
-			if(	(bola.v.y+bola.raio<=player2.v2.y && bola.v.y-bola.raio>=player2.v1.y) 
-					&& (bola.v.x+bola.raio+incX>=player2.v1.x) ) {
+			if(	(bola[*i].v.y+bola[*i].raio<=player2.v2.y && bola[*i].v.y-bola[*i].raio>=player2.v1.y) 
+					&& (bola[*i].v.x+bola[*i].raio+incX>=player2.v1.x) ) {
 				
-				if(bola.v.x+bola.raio+incX==player2.v1.x) {
-					bola.v.x+=incX;
+				if(bola[*i].v.x+bola[*i].raio+incX==player2.v1.x) {
+					bola[*i].v.x+=incX;
 				} else {
-					while(bola.v.x+bola.raio<player2.v1.x) {
-						bola.v.x++;
+					while(bola[*i].v.x+bola[*i].raio<player2.v1.x) {
+						bola[*i].v.x++;
 					}	
 				}
 				incX=-incX;
 		
-			}else if(bola.v.x+bola.raio+incX<594) {
-				bola.v.x+=incX;
-				if(bola.v.x+bola.raio>585){
+			}else if(bola[*i].v.x+bola[*i].raio+incX<594) {
+				bola[*i].v.x+=incX;
+				if(bola[*i].v.x+bola[*i].raio>585){
 					scoreP1++;
-					bola.v.x=299;
-					bola.v.y=199;
+					bola[*i].v.x=299;
+					bola[*i].v.y=199;
 					incX=-((rand()%3)+3);
 					incY=((rand()%3)+3);
 				}
 			} else {
-				while(bola.v.x+bola.raio<594-1) {
-					bola.v.x++;
-					if(bola.v.x+bola.raio>585){
+				while(bola[*i].v.x+bola[*i].raio<594-1) {
+					bola[*i].v.x++;
+					if(bola[*i].v.x+bola[*i].raio>585){
 						scoreP1++;
-						bola.v.x=299;
-						bola.v.y=199;
+						bola[*i].v.x=299;
+						bola[*i].v.y=199;
 						incX=-((rand()%3)+3);
 						incY=((rand()%3)+3);
 		
@@ -68,35 +75,35 @@ void task_Mov_Bola(void)
 			}
 		} else {
 		
-			if(	(bola.v.y+bola.raio<=player1.v2.y && bola.v.y-bola.raio>=player1.v1.y) 
-					&& (bola.v.x-bola.raio+incX<=player1.v2.x) ) {
+			if(	(bola[*i].v.y+bola[*i].raio<=player1.v2.y && bola[*i].v.y-bola[*i].raio>=player1.v1.y) 
+					&& (bola[*i].v.x-bola[*i].raio+incX<=player1.v2.x) ) {
 				
-				if(bola.v.x-bola.raio+incX==player2.v2.x) {
-					bola.v.x+=incX;
+				if(bola[*i].v.x-bola[*i].raio+incX==player2.v2.x) {
+					bola[*i].v.x+=incX;
 				} else {
-					while(bola.v.x-bola.raio>player2.v1.x) {
-						bola.v.x--;
+					while(bola[*i].v.x-bola[*i].raio>player2.v1.x) {
+						bola[*i].v.x--;
 					}	
 				}
 				incX=-incX;
 		
-			}else if(bola.v.x-bola.raio+incX>5) {
-				bola.v.x+=incX;
-				if(bola.v.x-bola.raio<10){
+			}else if(bola[*i].v.x-bola[*i].raio+incX>5) {
+				bola[*i].v.x+=incX;
+				if(bola[*i].v.x-bola[*i].raio<10){
 					scoreP2++;
-					bola.v.x=299;
-					bola.v.y=199;
+					bola[*i].v.x=299;
+					bola[*i].v.y=199;
 					incX=((rand()%3)+3);
 					incY=((rand()%3)+3);
 				}
 		
 			} else {
-				while(bola.v.x-bola.raio>5+1) {
-					bola.v.x--;
-					if(bola.v.x-bola.raio<10){
+				while(bola[*i].v.x-bola[*i].raio>5+1) {
+					bola[*i].v.x--;
+					if(bola[*i].v.x-bola[*i].raio<10){
 						scoreP2++;
-						bola.v.x=299;
-						bola.v.y=199;
+						bola[*i].v.x=299;
+						bola[*i].v.y=199;
 						incX=((rand()%3)+3);
 						incY=((rand()%3)+3);
 						break;	
@@ -109,25 +116,24 @@ void task_Mov_Bola(void)
 		// Movimentos Y
 		// Y
 		if(incY>0) {
-			if(bola.v.y+bola.raio+incY<INFERIOR) {
-				bola.v.y+=incY;
+			if(bola[*i].v.y+bola[*i].raio+incY<INFERIOR) {
+				bola[*i].v.y+=incY;
 			} else {
-				while(bola.v.y+bola.raio<INFERIOR-1) {
-					bola.v.y++;
+				while(bola[*i].v.y+bola[*i].raio<INFERIOR-1) {
+					bola[*i].v.y++;
 				}
 				incY=-incY;
 			}
 		} else {
-			if(bola.v.y-bola.raio+incY>TOPO) {
-				bola.v.y+=incY;
+			if(bola[*i].v.y-bola[*i].raio+incY>TOPO) {
+				bola[*i].v.y+=incY;
 			} else {
-				while(bola.v.y-bola.raio>TOPO+1) {
-					bola.v.y--;
+				while(bola[*i].v.y-bola[*i].raio>TOPO+1) {
+					bola[*i].v.y--;
 				}
 				incY=-incY;
 			}
 		}
 		KS_SleepTask(SYSTIMER, (TICKS)(100)/CLKTICK);
 	}
-	KS_TerminateTask(SELFTASK);
 }

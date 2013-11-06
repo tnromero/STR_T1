@@ -6,15 +6,15 @@
 #include "objetos.h"
 #include "graphics.h"
 
-extern circulo bola;
+circulo bola;
 
 void task_Bola(void);
 
 void task_Bola(void)
 {
-	bola.v.x=299;
+	/*bola.v.x=299;
 	bola.v.y=199;
 	bola.raio=10;
-	bola.fillcolor=WHITE;
+	bola.fillcolor=WHITE;	*/
 	KS_TerminateTask(SELFTASK);
 }

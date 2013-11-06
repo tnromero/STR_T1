@@ -120,9 +120,6 @@
     <ClCompile Include="..\Rtxcgen Files\Mov_Bola.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Teclado.cpp">
-      <Filter>RTXCgen Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">

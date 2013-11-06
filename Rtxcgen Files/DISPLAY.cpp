@@ -9,9 +9,10 @@
 extern tabuleiro t;
 extern quadrilatero player1;
 extern quadrilatero player2;
-extern circulo bola;
+extern circulo bola[5];
 extern int scoreP1;
 extern int scoreP2;
+extern int qtdBola;
 char SscoreP1[3];
 char SscoreP2[3];
 
@@ -61,8 +62,11 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 			player2.v2.x, player2.v2.y);
 	
 	// Bola
-	setcolor(bola.fillcolor);
-	circle(bola.v.x, bola.v.y, bola.raio);
-	floodfill(bola.v.x, bola.v.y, bola.fillcolor);
+	for(int i=0; i<qtdBola; i++)
+	{
+		setcolor(bola[i].fillcolor);
+		circle(bola[i].v.x, bola[i].v.y, bola[i].raio);
+		floodfill(bola[i].v.x, bola[i].v.y, bola[i].fillcolor);
+	}
 	
 }

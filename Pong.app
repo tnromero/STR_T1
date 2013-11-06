@@ -602,7 +602,7 @@ Statistics=1
 Diagnostics=0
 System Trace=0
 Dynamics Allowed=1
-Number of Dynamics=0
+Number of Dynamics=10
 Max Key Length=20
 c file dirty=0
 h file dirty=0
@@ -618,7 +618,6 @@ Player1=
 Player2=
 Bola=
 Mov_Bola=
-Teclado=
 
 [CONOTASK]
 Description=
@@ -739,25 +738,9 @@ Number of Dynamics=0
 Is MP=0
 Trace Object=0
 Trace Actor=0
-Enabled=1
+Enabled=0
 Class Name=Task
 Entry Point=task_Mov_Bola
-Initial Priority=10
-Stack Size=512
-Starting Order Number=10
-Manual=0
-Label=
-
-[Teclado]
-Description=
-Dynamics Allowed=1
-Number of Dynamics=0
-Is MP=0
-Trace Object=0
-Trace Actor=0
-Enabled=1
-Class Name=Task
-Entry Point=task_Teclado
 Initial Priority=10
 Stack Size=512
 Starting Order Number=10
@@ -877,6 +860,28 @@ Max Key Length=8
 c file dirty=0
 h file dirty=0
 m file dirty=0
+Objects=OBJS Partition
+
+[OBJS Partition]
+STKPART=
+
+[STKPART]
+Description=
+Dynamics Allowed=1
+Number of Dynamics=0
+Is MP=0
+Trace Object=0
+Trace Actor=0
+Enabled=1
+Class Name=Partition
+Block Size=1024
+Number of Blocks=8
+Waiting Order=0
+Block Size Expression=
+Number of Blocks Expression=
+Alignment=4
+Manual=0
+Label=
 
 [Mutex]
 Statistics=1

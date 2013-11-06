@@ -1,6 +1,6 @@
 // kpart.cpp - RTXC Quadros Version 1.0.0 Partition definitions
 
-// This file was generated on 11/05/2013 23:25:55 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/06/2013 11:51:39 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -40,6 +40,7 @@
 static const char partname[1 + NPARTS][PART_NAMMAX + 1] =
 {
     ""   // 0 - Not Used
+   ,"STKPART"   // 1 - 
 };
 #endif // } HAS_PartitionStaticNames
 
@@ -69,11 +70,16 @@ extern const KCLASSPROP partclassprop =
 
 // Partition Information
 
+#define M1SZ 1024
+#define M1CT 8
+static char part1[M1CT * M1SZ]; // 1 STKPART - 
+
 
 // Object Properties
 extern const PARTPROP partprop[1 + NPARTS] =
 {
     { 0, (char *)0, 0, 0 } // 0 - Not Used
+   ,{ 0, &part1[0], M1SZ, M1CT } // 1 STKPART - 
 };
 
 // Begin - Revision Information, Bottom

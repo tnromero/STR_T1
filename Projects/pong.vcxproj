@@ -108,7 +108,6 @@
     <ClCompile Include="..\Rtxcgen Files\Player2.cpp" />
     <ClCompile Include="..\Rtxcgen Files\Principal.cpp" />
     <ClCompile Include="..\Rtxcgen Files\Tabuleiro.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Teclado.cpp" />
     <ClCompile Include="..\Rtxcgen Files\winbgi.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

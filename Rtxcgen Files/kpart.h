@@ -1,6 +1,6 @@
 // kpart.h - RTXC Quadros Version 1.0.0 Partition include file
 
-// This file was generated on 11/05/2013 23:25:55 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/06/2013 11:51:39 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -31,10 +31,11 @@
 // Begin - Revision Information, Top
 // End - Revision Information, Top
 
-#define NPARTS 0
+#define NPARTS 1
 
 #define DNPARTS 0
 
+#define STKPART 1
 
 #define PART_NAMMAX 8
 
