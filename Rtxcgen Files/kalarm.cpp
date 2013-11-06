@@ -1,6 +1,6 @@
 // kalarm.cpp - RTXC Quadros Version 1.0.0 Alarm definitions
 
-// This file was generated on 11/05/2013 13:59:28 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/05/2013 23:02:14 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0

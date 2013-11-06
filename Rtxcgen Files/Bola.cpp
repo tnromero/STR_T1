@@ -15,7 +15,6 @@ void task_Bola(void)
 	bola.v.x=299;
 	bola.v.y=199;
 	bola.raio=10;
-	bola.filltype=SOLID_FILL;
-	bola.fillcolor=10;
+	bola.fillcolor=WHITE;
 	KS_TerminateTask(SELFTASK);
 }

@@ -26,12 +26,17 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 	// Score
 	sprintf_s(SscoreP1, "%2d", scoreP1);
 	sprintf_s(SscoreP2, "%2d", scoreP2);
-	setfillstyle(SOLID_FILL, 10);
+	
 	settextstyle(10, HORIZ_DIR, 2);
+	setcolor(WHITE);
 	outtextxy(10,450,"Score:");
 	outtextxy(10,470,"---------------");
+	
+	setcolor(player1.fillcolor);
 	outtextxy(10,500,"Player 1:");
 	outtextxy(150,500,SscoreP1);
+	
+	setcolor(player2.fillcolor);
 	outtextxy(10,530,"Player 2:");
 	outtextxy(150,530,SscoreP2);
 
@@ -56,7 +61,8 @@ void thrd_DISPLAY(void *ThreadArg, void *ThreadEnvArg)
 			player2.v2.x, player2.v2.y);
 	
 	// Bola
-	setfillstyle(bola.filltype, bola.fillcolor);
+	setcolor(bola.fillcolor);
 	circle(bola.v.x, bola.v.y, bola.raio);
+	floodfill(bola.v.x, bola.v.y, bola.fillcolor);
 	
 }

@@ -31,7 +31,6 @@ struct tabuleiro
 struct circulo {
 	vertice v;
 	int raio;
-	int filltype;
 	int fillcolor;
 };
 

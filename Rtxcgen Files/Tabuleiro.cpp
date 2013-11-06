@@ -5,6 +5,7 @@
 #include "kproject.h"
 #include "objetos.h"
 #include "graphics.h"
+#include "Util.h"
 
 extern tabuleiro t;
 
@@ -14,30 +15,30 @@ void task_Tabuleiro(void)
 {
 	// Cores
 	t.filltype=SOLID_FILL;
-	t.fillcolor=3;
+	t.fillcolor=DARKGRAY;
 	
 	// Esquerda
-	t.lado[0].v1.x=0;
-	t.lado[0].v1.y=0;
-	t.lado[0].v2.x=5;
-	t.lado[0].v2.y=399;
+	t.lado[0].v1.x=EXT_ESQUERDA;
+	t.lado[0].v1.y=EXT_TOPO;
+	t.lado[0].v2.x=ESQUERDA;
+	t.lado[0].v2.y=EXT_INFERIOR;
 	
 	// Topo
-	t.lado[1].v1.x=0;
-	t.lado[1].v1.y=0;
-	t.lado[1].v2.x=599;
-	t.lado[1].v2.y=5;
+	t.lado[1].v1.x=EXT_ESQUERDA;
+	t.lado[1].v1.y=EXT_TOPO;
+	t.lado[1].v2.x=EXT_DIREITA;
+	t.lado[1].v2.y=TOPO;
 	
 	// Direita
-	t.lado[2].v1.x=599-5;
-	t.lado[2].v1.y=0;
-	t.lado[2].v2.x=599;
-	t.lado[2].v2.y=399;
+	t.lado[2].v1.x=DIREITA;
+	t.lado[2].v1.y=EXT_TOPO;
+	t.lado[2].v2.x=EXT_DIREITA;
+	t.lado[2].v2.y=EXT_INFERIOR;
 	
 	// Inferior
-	t.lado[3].v1.x=0;
-	t.lado[3].v1.y=399-5;
-	t.lado[3].v2.x=599;
-	t.lado[3].v2.y=399;
+	t.lado[3].v1.x=EXT_ESQUERDA;
+	t.lado[3].v1.y=INFERIOR;
+	t.lado[3].v2.x=EXT_DIREITA;
+	t.lado[3].v2.y=EXT_INFERIOR;
 	KS_TerminateTask(SELFTASK);
 }

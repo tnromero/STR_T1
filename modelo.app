@@ -618,6 +618,7 @@ Player1=
 Player2=
 Bola=
 Mov_Bola=
+Teclado=
 
 [CONOTASK]
 Description=
@@ -741,6 +742,22 @@ Trace Actor=0
 Enabled=1
 Class Name=Task
 Entry Point=task_Mov_Bola
+Initial Priority=10
+Stack Size=512
+Starting Order Number=10
+Manual=0
+Label=
+
+[Teclado]
+Description=
+Dynamics Allowed=1
+Number of Dynamics=0
+Is MP=0
+Trace Object=0
+Trace Actor=0
+Enabled=1
+Class Name=Task
+Entry Point=task_Teclado
 Initial Priority=10
 Stack Size=512
 Starting Order Number=10
