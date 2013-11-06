@@ -1,6 +1,6 @@
 // kalarm.h - RTXC Quadros Version 1.0.0 Alarm include file
 
-// This file was generated on 11/05/2013 23:02:14 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/05/2013 23:25:55 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -21,9 +21,9 @@
  *    an Application specification file.
 */
 
-//     Project Name: Exemplo-modelo
+//     Project Name: Pong
 //         CPU Name: CPU name
-// Application Name: Application name
+// Application Name: Pong
 
 #ifndef _KALARM_H // {
 #define _KALARM_H

@@ -15,7 +15,7 @@ void task_Tabuleiro(void)
 {
 	// Cores
 	t.filltype=SOLID_FILL;
-	t.fillcolor=DARKGRAY;
+	t.fillcolor=WHITE;
 	
 	// Esquerda
 	t.lado[0].v1.x=EXT_ESQUERDA;

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
-<Properties><Property Name="Solution" Value="modelo">
-</Property><Property Name="Solution File" Value="C:\Users\Asus\Desktop\Trabalho1\Projects\modelo.sln">
+<Properties><Property Name="Solution" Value="Pong">
+</Property><Property Name="Solution File" Value="C:\Users\Asus\Desktop\Trabalho1\Projects\Pong.sln">
 </Property><Property Name="Date" Value="terça-feira, 22 de outubro de 2013">
 </Property><Property Name="Time" Value="23:12">
-</Property></Properties><Event ErrorLevel="0" Project="modelo" Source="modelo.vcproj" Description="Converting project file 'C:\Users\Asus\Desktop\Trabalho1\Projects\modelo.vcproj'.">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Asus\Desktop\Trabalho1\Projects\Debug\modelo.exe') does not match the Linker's OutputFile property value '.\Bin\Modelo.exe' ('C:\Users\Asus\Desktop\Trabalho1\Projects\Bin\Modelo.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="MSB8012: $(TargetName) ('modelo') does not match the Linker's OutputFile property value '.\Bin\Mandel.exe' ('Mandel') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).">
-</Event><Event ErrorLevel="1" Project="modelo" Source="modelo.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Asus\Desktop\Trabalho1\Projects\Release\modelo.exe') does not match the Linker's OutputFile property value '.\Bin\Mandel.exe' ('C:\Users\Asus\Desktop\Trabalho1\Projects\Bin\Mandel.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
-</Event><Event ErrorLevel="0" Project="modelo" Source="modelo.vcproj" Description="Done converting to new project file 'C:\Users\Asus\Desktop\Trabalho1\Projects\modelo.vcxproj'.">
-</Event><Event ErrorLevel="3" Project="modelo" Source="modelo.vcproj" Description="Converted">
-</Event><Event ErrorLevel="0" Project="" Source="modelo.sln" Description="Solution converted successfully">
-</Event><Event ErrorLevel="3" Project="" Source="modelo.sln" Description="Converted">
+</Property></Properties><Event ErrorLevel="0" Project="Pong" Source="Pong.vcproj" Description="Converting project file 'C:\Users\Asus\Desktop\Trabalho1\Projects\Pong.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Asus\Desktop\Trabalho1\Projects\Debug\Pong.exe') does not match the Linker's OutputFile property value '.\Bin\Modelo.exe' ('C:\Users\Asus\Desktop\Trabalho1\Projects\Bin\Modelo.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="MSB8012: $(TargetName) ('Pong') does not match the Linker's OutputFile property value '.\Bin\Mandel.exe' ('Mandel') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Pong" Source="Pong.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Asus\Desktop\Trabalho1\Projects\Release\Pong.exe') does not match the Linker's OutputFile property value '.\Bin\Mandel.exe' ('C:\Users\Asus\Desktop\Trabalho1\Projects\Bin\Mandel.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Pong" Source="Pong.vcproj" Description="Done converting to new project file 'C:\Users\Asus\Desktop\Trabalho1\Projects\Pong.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Pong" Source="Pong.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Pong.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Pong.sln" Description="Converted">
 </Event></UpgradeLog>
