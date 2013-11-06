@@ -1,6 +1,6 @@
 // kthread.cpp - RTXC Quadros Version 1.0.0 Thread definitions
 
-// This file was generated on 11/06/2013 11:51:39 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/06/2013 21:55:37 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -41,7 +41,7 @@
 static const char threadname[1 + NTHREADS][THREAD_NAMMAX + 1] =
 {
     ""   // 0 - Not Used
-   ,"DISPLAY"   // 1 - 
+   ,"_Display"   // 1 - 
 };
 #endif // } HAS_ThreadStaticNames
 
@@ -71,13 +71,13 @@ extern const KCLASSPROP threadclassprop =
 
 // Thread Information
 
-extern void thrd_DISPLAY(void *, void *);
+extern void thrd__Display(void *, void *);
 
 // Object Properties
 extern const THREADPROP threadprop[1 + NTHREADS] =
 {
     { 0, 0, 0, (void (*) (void *, void *))0 } // 0 - Not Used
-   ,{ 0, LEVEL1, 1, thrd_DISPLAY} // 1 DISPLAY - 
+   ,{ 0, LEVEL1, 1, thrd__Display} // 1 _Display - 
 };
 
 // Begin - Revision Information, Bottom

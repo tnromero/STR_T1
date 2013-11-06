@@ -96,28 +96,25 @@
     <ClCompile Include="..\Common\sysinit.cpp">
       <Filter>Configuration</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Principal.cpp">
-      <Filter>RTXCgen Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Rtxcgen Files\winbgi.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\DISPLAY.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Display.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Tabuleiro.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Mov_Bola.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Player1.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Player1.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Player2.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Player2.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Bola.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Principal.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Rtxcgen Files\Mov_Bola.cpp">
+    <ClCompile Include="..\Rtxcgen Files\_Tabuleiro.cpp">
       <Filter>RTXCgen Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,0 +1,952 @@
+
+
+------------------------------------------------------------
+RTXC Quadros Version 1.0.0
+Copyright (c) 1999-2013, Quadros Systems, Inc.
+All Rights Reserved
+
+This report was generated on 11/06/2013 20:22:18
+------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------
+Project properties
+------------------------------------------------------------
+
+Name       : Pong
+Description: 
+File       : C:\Users\Asus\git\STR_T1\Pong.rtx
+
+
+------------------------------------------------------------
+CPU properties
+------------------------------------------------------------
+
+Name               : CPU name
+Description        : 
+File               : .\Pong.cpu
+Model              : Windows
+Model file         : .\Windows\Windows.mdl
+Framework          : MS+SS
+
+
+------------------------------------------------------------
+CPU Model Options
+------------------------------------------------------------
+
+Name                             Key              Value
+================================ ================ ==========
+
+
+------------------------------------------------------------
+CPU Options and Services
+------------------------------------------------------------
+
+
+Class: Level
+
+    Option: LEVL Static Names                               Enabled
+    Option: LEVL Multiple Level Scheduling                  Enabled
+    Option: LEVL Add Round Robin Scheduling                 Enabled
+
+Class: Thread
+
+    Option: THRD Static Names                               Enabled
+    Option: THRD Thread Gate                                Enabled
+        Option: THRD Gate Zone 1 Services                   Enabled
+            Service: IS_ClearThreadGateBits                 Enabled
+            Service: IS_DecrThreadGate                      Enabled
+            Service: IS_IncrThreadGate                      Enabled
+            Service: IS_ORThreadGateBits                    Enabled
+        Option: THRD Gate Zone 2 Services                   Enabled
+            Service: TS_ClearThreadGateBits                 Enabled
+            Service: TS_DecrThreadGate                      Enabled
+            Service: TS_GetThreadGate                       Enabled
+            Service: TS_PresetThreadGate                    Enabled
+            Service: TS_GetThreadGateLoadPreset             Enabled
+            Service: TS_GetThreadGatePreset                 Enabled
+            Service: TS_IncrThreadGate                      Enabled
+            Service: TS_ORThreadGateBits                    Enabled
+            Service: TS_SetThreadGate                       Enabled
+            Service: TS_SetThreadGatePreset                 Enabled
+        Option: THRD Gate Zone 3 Services                   Enabled
+            Service: KS_ClearThreadGateBits                 Enabled
+            Service: KS_DecrThreadGate                      Enabled
+            Service: KS_GetThreadGate                       Enabled
+            Service: KS_PresetThreadGate                    Enabled
+            Service: KS_GetThreadGatePreset                 Enabled
+            Service: KS_IncrThreadGate                      Enabled
+            Service: KS_ORThreadGateBits                    Enabled
+            Service: KS_SetThreadGate                       Enabled
+            Service: KS_SetThreadGatePreset                 Enabled
+    Option: THRD Thread Argument                            Enabled
+        Option: THRD Args Zone 1 Services                   Enabled
+            Service: IS_DefThreadArg                        Enabled
+            Service: IS_ScheduleThreadArg                   Enabled
+        Option: THRD Args Zone 2 Services                   Enabled
+            Service: TS_DefThreadArg                        Enabled
+            Service: TS_GetThreadArg                        Enabled
+            Service: TS_ScheduleThreadArg                   Enabled
+        Option: THRD Args Zone 3 Services                   Enabled
+            Service: KS_DefThreadArg                        Enabled
+            Service: KS_ScheduleThreadArg                   Enabled
+    Option: THRD Environment Args                           Enabled
+        Option: THRD EnvArgs Zone 2 Services                Enabled
+            Service: TS_DefThreadEnvArg                     Enabled
+            Service: TS_GetThreadEnvArg                     Enabled
+        Option: THRD EnvArgs Zone 3 Services                Enabled
+            Service: KS_DefThreadEnvArg                     Enabled
+            Service: KS_GetThreadEnvArg                     Enabled
+    Option: THRD Zone 1 Services                            Enabled
+        Service: IS_DefThreadEntry                          Enabled
+        Service: IS_GetThreadProp                           Enabled
+        Service: IS_ScheduleThread                          Enabled
+        Service: IS_UnscheduleThread                        Enabled
+    Option: THRD Zone 2 Services                            Enabled
+        Service: TS_DefThreadEntry                          Enabled
+        Service: TS_DisableThreadScheduler                  Enabled
+        Service: TS_EnableThreadScheduler                   Enabled
+        Service: TS_GetThreadBaseLevel                      Enabled
+        Service: TS_GetThreadClassProp                      Enabled
+        Service: TS_GetThreadCurrentLevel                   Enabled
+        Service: TS_GetThreadID                             Enabled
+        Service: TS_GetThreadProp                           Enabled
+        Service: TS_LowerThreadLevel                        Enabled
+        Service: TS_RaiseThreadLevel                        Enabled
+        Service: TS_ScheduleThread                          Enabled
+        Service: TS_UnscheduleThread                        Enabled
+    Option: THRD Zone 3 Services                            Enabled
+        Service: KS_DefThreadEntry                          Enabled
+        Service: KS_GetThreadClassProp                      Enabled
+        Service: KS_GetThreadProp                           Enabled
+        Service: KS_ScheduleThread                          Enabled
+        Service: KS_LookupThread                            Enabled
+
+Class: Exception
+
+    Option: EXPT Static Names                               Enabled
+    Option: EXPT Dynamics                                   Enabled
+        Service: KS_CloseException                          Enabled
+        Service: KS_DefExceptionName                        Enabled
+        Service: KS_GetExceptionName                        Enabled
+        Service: KS_OpenException                           Enabled
+        Service: KS_UseException                            Enabled
+    Option: EXPT Zone 2 Services                            Enabled
+        Service: TS_GetExceptionProp                        Enabled
+    Option: EXPT Zone 3 Services                            Enabled
+        Service: KS_GetExceptionClassProp                   Enabled
+        Service: KS_GetExceptionProp                        Enabled
+        Service: KS_LookupException                         Enabled
+    Option: EXPT RAM Vectors                                Enabled
+
+Class: Event Source
+
+    Option: EVNT Static Names                               Enabled
+    Option: EVNT Dynamics                                   Enabled
+        Service: KS_CloseEventSource                        Enabled
+        Service: KS_DefEventSourceName                      Enabled
+        Service: KS_GetEventSourceName                      Enabled
+        Service: KS_OpenEventSource                         Enabled
+        Service: KS_UseEventSource                          Enabled
+    Option: EVNT Zone 1 Services                            Enabled
+        Service: IS_ProcessEventSourceTick                  Enabled
+        Service: IS_GetEventSourceAcc                       Enabled
+    Option: EVNT Zone 2 Services                            Enabled
+        Service: TS_ProcessEventSourceTick                  Enabled
+        Service: TS_SetEventSourceAttr                      Enabled
+        Service: TS_ClearEventSourceAttr                    Enabled
+        Service: TS_GetEventSourceAcc                       Enabled
+        Service: TS_SetEventSourceAcc                       Enabled
+        Service: TS_GetEventSourceProp                      Enabled
+    Option: EVNT Zone 3 Services                            Enabled
+        Service: KS_ProcessEventSourceTick                  Enabled
+        Service: KS_SetEventSourceAttr                      Enabled
+        Service: KS_ClearEventSourceAttr                    Enabled
+        Service: KS_GetEventSourceAcc                       Enabled
+        Service: KS_SetEventSourceAcc                       Enabled
+        Service: KS_GetEventSourceClassProp                 Enabled
+        Service: KS_GetEventSourceProp                      Enabled
+        Service: KS_LookupEventSource                       Enabled
+
+Class: Counter
+
+    Option: CNTR Static Names                               Enabled
+    Option: CNTR Dynamics                                   Enabled
+        Service: KS_CloseCounter                            Enabled
+        Service: KS_DefCounterName                          Enabled
+        Service: KS_GetCounterName                          Enabled
+        Service: KS_OpenCounter                             Enabled
+        Service: KS_UseCounter                              Enabled
+    Option: CNTR Zone 1 Services                            Enabled
+        Service: IS_GetCounterAcc                           Enabled
+    Option: CNTR Zone 2 Services                            Enabled
+        Service: TS_ClearCounterAttr                        Enabled
+        Service: TS_GetCounterAcc                           Enabled
+        Service: TS_GetCounterProp                          Enabled
+        Service: TS_GetElapsedCounterTicks                  Enabled
+        Service: TS_SetCounterAcc                           Enabled
+        Service: TS_SetCounterAttr                          Enabled
+    Option: CNTR Zone 3 Services                            Enabled
+        Service: KS_ClearCounterAttr                        Enabled
+        Service: KS_GetCounterAcc                           Enabled
+        Service: KS_GetCounterClassProp                     Enabled
+        Service: KS_GetCounterProp                          Enabled
+        Service: KS_GetElapsedCounterTicks                  Enabled
+        Service: KS_SetCounterAcc                           Enabled
+        Service: KS_SetCounterAttr                          Enabled
+        Service: KS_LookupCounter                           Enabled
+
+Class: Alarm
+
+    Option: ALRM Static Names                               Enabled
+    Option: ALRM Dynamics                                   Enabled
+        Service: KS_CloseAlarm                              Enabled
+        Service: KS_DefAlarmName                            Enabled
+        Service: KS_GetAlarmName                            Enabled
+        Service: KS_OpenAlarm                               Enabled
+        Service: KS_UseAlarm                                Enabled
+    Option: ALRM Waiters                                    Enabled
+        Service: KS_TestAlarmW                              Enabled
+        Option: ALRM Tickouts                               Enabled
+            Service: KS_TestAlarmT                          Enabled
+        Option: ALRM Priority Waiters                       Enabled
+    Option: ALRM Semaphores                                 Enabled
+        Service: KS_DefAlarmSema                            Enabled
+        Service: KS_GetAlarmSema                            Enabled
+    Option: ALRM Alarm Actions                              Enabled
+        Option: ALRM Actions Zone 2 Services                Enabled
+            Service: TS_DefAlarmAction                      Enabled
+            Service: TS_DefAlarmActionArm                   Enabled
+        Option: ALRM Actions Zone 3 Services                Enabled
+            Service: KS_DefAlarmAction                      Enabled
+            Service: KS_DefAlarmActionArm                   Enabled
+    Option: ALRM Zone 2 Services                            Enabled
+        Service: TS_AbortAlarm                              Enabled
+        Service: TS_ArmAlarm                                Enabled
+        Service: TS_CancelAlarm                             Enabled
+        Service: TS_GetAlarmProp                            Enabled
+        Service: TS_GetAlarmTicks                           Enabled
+        Service: TS_RearmAlarm                              Enabled
+    Option: ALRM Zone 3 Services                            Enabled
+        Service: KS_AbortAlarm                              Enabled
+        Service: KS_ArmAlarm                                Enabled
+        Service: KS_CancelAlarm                             Enabled
+        Service: KS_GetAlarmClassProp                       Enabled
+        Service: KS_GetAlarmProp                            Enabled
+        Service: KS_GetAlarmTicks                           Enabled
+        Service: KS_RearmAlarm                              Enabled
+        Service: KS_TestAlarm                               Enabled
+        Service: KS_LookupAlarm                             Enabled
+
+Class: Pipe
+
+    Option: PIPE Static Names                               Enabled
+    Option: PIPE Dynamics                                   Enabled
+        Service: KS_ClosePipe                               Enabled
+        Service: KS_DefPipeName                             Enabled
+        Service: KS_GetPipeName                             Enabled
+        Service: KS_OpenPipe                                Enabled
+        Service: KS_UsePipe                                 Enabled
+    Option: PIPE Pipe Actions                               Enabled
+        Option: PIPE Actions Zone 2 Services                Enabled
+            Service: TS_DefPipeAction                       Enabled
+        Option: PIPE Actions Zone 3 Services                Enabled
+            Service: KS_DefPipeAction                       Enabled
+    Option: PIPE Zone 1 Services                            Enabled
+        Service: IS_GetEmptyPipeBuf                         Enabled
+        Service: IS_GetFullPipeBuf                          Enabled
+        Service: IS_GetPipeBufSize                          Enabled
+        Service: IS_JamFullGetEmptyPipeBuf                  Enabled
+        Service: IS_JamFullPipeBuf                          Enabled
+        Service: IS_PutEmptyGetFullPipeBuf                  Enabled
+        Service: IS_PutEmptyPipeBuf                         Enabled
+        Service: IS_PutFullGetEmptyPipeBuf                  Enabled
+        Service: IS_PutFullPipeBuf                          Enabled
+    Option: PIPE Zone 2 Services                            Enabled
+        Service: TS_ClearPipeAttr                           Enabled
+        Service: TS_GetEmptyPipeBuf                         Enabled
+        Service: TS_GetFullPipeBuf                          Enabled
+        Service: TS_GetPipeBufSize                          Enabled
+        Service: TS_GetPipeProp                             Enabled
+        Service: TS_JamFullGetEmptyPipeBuf                  Enabled
+        Service: TS_JamFullPipeBuf                          Enabled
+        Service: TS_PutEmptyGetFullPipeBuf                  Enabled
+        Service: TS_PutEmptyPipeBuf                         Enabled
+        Service: TS_PutFullGetEmptyPipeBuf                  Enabled
+        Service: TS_PutFullPipeBuf                          Enabled
+        Service: TS_SetPipeAttr                             Enabled
+    Option: PIPE Zone 3 Services                            Enabled
+        Service: KS_ClearPipeAttr                           Enabled
+        Service: KS_GetEmptyPipeBuf                         Enabled
+        Service: KS_GetFullPipeBuf                          Enabled
+        Service: KS_GetPipeBufSize                          Enabled
+        Service: KS_GetPipeClassProp                        Enabled
+        Service: KS_GetPipeProp                             Enabled
+        Service: KS_JamFullGetEmptyPipeBuf                  Enabled
+        Service: KS_JamFullPipeBuf                          Enabled
+        Service: KS_PutEmptyGetFullPipeBuf                  Enabled
+        Service: KS_PutEmptyPipeBuf                         Enabled
+        Service: KS_PutFullGetEmptyPipeBuf                  Enabled
+        Service: KS_PutFullPipeBuf                          Enabled
+        Service: KS_SetPipeAttr                             Enabled
+        Service: KS_LookupPipe                              Enabled
+
+Class: Task
+
+    Option: TASK Static Names                               Enabled
+    Option: TASK Dynamics                                   Enabled
+        Service: KS_CloseTask                               Enabled
+        Service: KS_DefTaskName                             Enabled
+        Service: KS_GetTaskName                             Enabled
+        Service: KS_OpenTask                                Enabled
+        Service: KS_UseTask                                 Enabled
+    Option: TASK Semaphores                                 Enabled
+        Service: KS_DefTaskSema                             Enabled
+        Service: KS_GetTaskSema                             Enabled
+    Option: TASK Tick Slice                                 Enabled
+        Service: KS_DefTickSlice                            Enabled
+        Service: KS_GetTickSlice                            Enabled
+    Option: TASK Environment Arguments                      Enabled
+        Service: KS_DefTaskEnvArg                           Enabled
+        Service: KS_GetTaskEnvArg                           Enabled
+        Service: KS_GetSelfTaskEnvArg                       Enabled
+    Option: TASK Tickouts                                   Enabled
+        Service: KS_SleepTask                               Enabled
+    Option: TASK Zone 1 Services                            Enabled
+        Service: IS_ResumeTask                              Enabled
+    Option: TASK Zone 2 Services                            Enabled
+        Service: TS_ResumeTask                              Enabled
+
+Class: Semaphore
+
+    Option: SEMA Static Names                               Enabled
+    Option: SEMA Dynamics                                   Enabled
+        Service: KS_CloseSema                               Enabled
+        Service: KS_DefSemaName                             Enabled
+        Service: KS_GetSemaName                             Enabled
+        Service: KS_OpenSema                                Enabled
+        Service: KS_UseSema                                 Enabled
+    Option: SEMA Waiters                                    Enabled
+        Service: KS_TestSemaMW                              Enabled
+        Service: KS_TestSemaW                               Enabled
+        Option: SEMA Tickouts                               Enabled
+            Service: KS_TestSemaT                           Enabled
+            Service: KS_TestSemaMT                          Enabled
+        Option: SEMA Priority Waiters                       Enabled
+    Option: SEMA Zone 1 Services                            Enabled
+        Service: IS_SignalSema                              Enabled
+        Service: IS_SignalSemaM                             Enabled
+    Option: SEMA Zone 2 Services                            Enabled
+        Service: TS_SignalSema                              Enabled
+        Service: TS_SignalSemaM                             Enabled
+
+Class: Queue
+
+    Option: QUEU Static Names                               Enabled
+    Option: QUEU Dynamics                                   Enabled
+        Service: KS_CloseQueue                              Enabled
+        Service: KS_DefQueueName                            Enabled
+        Service: KS_GetQueueName                            Enabled
+        Service: KS_OpenQueue                               Enabled
+        Service: KS_UseQueue                                Enabled
+    Option: QUEU Semaphores                                 Enabled
+        Service: KS_DefQueueSema                            Enabled
+        Service: KS_GetQueueSema                            Enabled
+    Option: QUEU Waiters                                    Enabled
+        Service: KS_PutQueueDataW                           Enabled
+        Service: KS_GetQueueDataW                           Enabled
+        Option: QUEU Tickouts                               Enabled
+            Service: KS_PutQueueDataT                       Enabled
+            Service: KS_GetQueueDataT                       Enabled
+        Option: QUEU Priority Waiters                       Enabled
+
+Class: Mailbox
+
+    Option: MBOX Static Names                               Enabled
+    Option: MBOX Dynamics                                   Enabled
+        Service: KS_CloseMbox                               Enabled
+        Service: KS_DefMboxName                             Enabled
+        Service: KS_GetMboxName                             Enabled
+        Service: KS_OpenMbox                                Enabled
+        Service: KS_UseMbox                                 Enabled
+    Option: MBOX Semaphores                                 Enabled
+        Service: KS_DefMboxSema                             Enabled
+        Service: KS_GetMboxSema                             Enabled
+    Option: MBOX Waiters                                    Enabled
+        Service: KS_SendMsgW                                Enabled
+        Service: KS_ReceiveMsgW                             Enabled
+        Service: KS_TestAckW                                Enabled
+        Option: MBOX Tickouts                               Enabled
+            Service: KS_SendMsgT                            Enabled
+            Service: KS_ReceiveMsgT                         Enabled
+            Service: KS_TestAckT                            Enabled
+        Option: MBOX Priority Waiters                       Enabled
+
+Class: Partition
+
+    Option: PART Static Names                               Enabled
+    Option: PART Dynamics                                   Enabled
+        Service: KS_ClosePart                               Enabled
+        Service: KS_DefPartName                             Enabled
+        Service: KS_GetPartName                             Enabled
+        Service: KS_OpenPart                                Enabled
+        Service: KS_UsePart                                 Enabled
+    Option: PART Semaphores                                 Enabled
+        Service: KS_DefPartSema                             Enabled
+        Service: KS_GetPartSema                             Enabled
+    Option: PART Waiters                                    Enabled
+        Service: KS_AllocBlkW                               Enabled
+        Option: PART Tickouts                               Enabled
+            Service: KS_AllocBlkT                           Enabled
+        Option: PART Priority Waiters                       Enabled
+    Option: PART Zone 1 Services                            Enabled
+        Service: IS_AllocBlk                                Enabled
+    Option: PART Zone 2 Services                            Enabled
+        Service: TS_AllocBlk                                Enabled
+
+Class: Mutex
+
+    Option: MUTX Static Names                               Enabled
+    Option: MUTX Dynamics                                   Enabled
+        Service: KS_CloseMutx                               Enabled
+        Service: KS_DefMutxName                             Enabled
+        Service: KS_GetMutxName                             Enabled
+        Service: KS_OpenMutx                                Enabled
+        Service: KS_UseMutx                                 Enabled
+    Option: MUTX Semaphores                                 Enabled
+        Service: KS_DefMutxSema                             Enabled
+        Service: KS_GetMutxSema                             Enabled
+    Option: MUTX Priority Inversion                         Enabled
+    Option: MUTX Waiters                                    Enabled
+        Service: KS_TestMutxW                               Enabled
+        Option: MUTX Tickouts                               Enabled
+            Service: KS_TestMutxT                           Enabled
+        Option: MUTX Priority Waiters                       Enabled
+
+Class: Special Service
+
+    Option: SPCS Zone 2 Services                            Enabled
+        Service: TS_DefFatalErrorHandler                    Enabled
+        Service: TS_GetFatalErrorHandler                    Enabled
+        Service: TS_AllocSysRAM                             Enabled
+        Service: TS_GetFreeSysRAMSize                       Enabled
+    Option: SPCS Zone 3 Services                            Enabled
+        Service: KS_AllocSysRAM                             Enabled
+        Service: KS_DefFatalErrorHandler                    Enabled
+        Service: KS_DisableTaskScheduler                    Enabled
+        Service: KS_EnableTaskScheduler                     Enabled
+        Service: KS_GetFreeSysRAMSize                       Enabled
+        Service: KS_GetFatalErrorHandler                    Enabled
+        Service: KS_GetSysProp                              Enabled
+        Service: KS_GetVersion                              Enabled
+        Service: KS_Nop                                     Enabled
+        Service: KS_UserService                             Enabled
+
+
+------------------------------------------------------------
+Application properties
+------------------------------------------------------------
+
+Name                         : Pong
+Description                  : 
+File                         : .\Pong.app
+Code path                    : .\Rtxcgen Files
+Header path                  : .\Rtxcgen Files
+Option path                  : .\Rtxcgen Files
+Report path                  : .\Rtxcgen Files
+User version                 : 0
+C source extension           : cpp
+C header extension           : h
+Assembler source extension   : s
+Assembler header extension   : inc
+Generate assembler code      : Disabled
+Generate instrumentation data: Disabled
+Generate exception macros    : Enabled
+Generate C++-style comments  : Enabled
+Text file format             : MS-DOS
+"const" defined as "extern"  : Enabled
+User trace                   : Disabled
+
+
+------------------------------------------------------------
+Application Model Options
+------------------------------------------------------------
+
+Name                             Key              Value
+================================ ================ ==========
+
+
+------------------------------------------------------------
+Target parameters
+------------------------------------------------------------
+
+Memory units               : Bytes
+System RAM size            : 4096
+System RAM placement       : Automatic
+Kernel stack size          : 256
+Kernel stack placement     : Automatic
+Anchor placement           : Floating
+System clock rate (Hz)     : 1000
+System clock tick (ms)     : 1
+
+
+------------------------------------------------------------
+Class       : Level	
+Statics     : 1
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  LEVEL1     
+
+Level object 1: LEVEL1
+
+    Description              : 
+    Enabled                  : Yes
+    Scheduling policy        : Priority
+    Trace object             : Disabled
+
+
+
+------------------------------------------------------------
+Class       : Thread	
+Statics     : 1
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  DISPLAY    
+
+Thread object 1: DISPLAY
+
+    Description              : 
+    Enabled                  : Yes
+    Level                    : LEVEL1
+    Entry point              : thrd_DISPLAY
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Exception	
+Statics     : 2
+Dynamics    : 5
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  TMR0ISR    Timer 0 Interrupt Service Routine
+     2  UART0ISR   
+
+Exception object 1: TMR0ISR
+
+    Description              : Timer 0 Interrupt Service Routine
+    Enabled                  : Yes
+    Interrupt level          : 2
+    Vector number            : 119
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Exception object 2: UART0ISR
+
+    Description              : 
+    Enabled                  : Yes
+    Interrupt level          : 1
+    Vector number            : 77
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Event Source	
+Statics     : 1
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  EVNTSRC1   
+
+Event Source object 1: EVNTSRC1
+
+    Description              : 
+    Enabled                  : Yes
+    Trace object             : Disabled
+
+
+------------------------------------------------------------
+Class       : Counter	
+Statics     : 1
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  SYSTIMER   
+
+Counter object 1: SYSTIMER
+
+    Description              : 
+    Enabled                  : Yes
+    Event source             : EVNTSRC1
+    Modulus                  : 1
+    System timebase          : Yes
+    Tickslice counter        : Yes
+    Trace object             : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Pipe	
+Statics     : 0
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------
+Class       : Task	
+Statics     : 8
+Dynamics    : 10
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  CONOTASK   
+     2  CONITASK   
+     3  Principal  
+     4  Tabuleiro  
+     5  Player1    
+     6  Player2    
+     7  Bola       
+     8  x-Mov_Bola 
+
+Task object 1: CONOTASK
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_CONOTASK
+    Initial priority         : 4
+    Starting order number    : 4
+    Stack size               : 256
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 2: CONITASK
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_CONITASK
+    Initial priority         : 3
+    Starting order number    : 3
+    Stack size               : 256
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 3: Principal
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_Principal
+    Initial priority         : 10
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 4: Tabuleiro
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_Tabuleiro
+    Initial priority         : 9
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 5: Player1
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_Player1
+    Initial priority         : 9
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 6: Player2
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_Player2
+    Initial priority         : 9
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 7: Bola
+
+    Description              : 
+    Enabled                  : Yes
+    Entry point              : task_Bola
+    Initial priority         : 9
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+Task object 8: Mov_Bola
+
+    Description              : 
+    Enabled                  : No
+    Entry point              : task_Mov_Bola
+    Initial priority         : 10
+    Starting order number    : 10
+    Stack size               : 512
+    Stack manual placement   : Disabled
+    Trace object             : Disabled
+    Trace actor              : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Semaphore	
+Statics     : 2
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  CONAOSEM   
+     2  CONAISEM   
+
+Semaphore object 1: CONAOSEM
+
+    Description              : 
+    Enabled                  : Yes
+    Signal type              : Single
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+Semaphore object 2: CONAISEM
+
+    Description              : 
+    Enabled                  : Yes
+    Signal type              : Single
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Queue	
+Statics     : 2
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  CONAIQ     
+     2  CONAOQ     
+
+Queue object 1: CONAIQ
+
+    Description              : 
+    Enabled                  : Yes
+    Queue width              : 1
+    Queue depth              : 16
+    Waiting order            : Priority
+    Queue alignment          : 1
+    Queue manual placement   : Disabled
+    Trace object             : Disabled
+
+Queue object 2: CONAOQ
+
+    Description              : 
+    Enabled                  : Yes
+    Queue width              : 1
+    Queue depth              : 256
+    Waiting order            : Priority
+    Queue alignment          : 1
+    Queue manual placement   : Disabled
+    Trace object             : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Mailbox	
+Statics     : 0
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------
+Class       : Partition	
+Statics     : 1
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  STKPART    
+
+Partition object 1: STKPART
+
+    Description              : 
+    Enabled                  : Yes
+    Block size               : 1024
+    Number of blocks         : 8
+    Waiting order            : Priority
+    Alignment                : 4
+    Block manual placement   : Disabled
+    Trace object             : Disabled
+
+
+
+
+------------------------------------------------------------
+Class       : Mutex	
+Statics     : 5
+Dynamics    : 0
+Statistics  : Enabled
+Diagnostics : Disabled
+System trace: Disabled
+
+------------------------------------------------------------
+
+Number  Name       Description
+======  ========== ==================================================
+     1  CONAMUTX   
+     2  POPPARAM   
+     3  M_PLOTQ    
+     4  M_P1       
+     5  M_P2       
+
+Mutex object 1: CONAMUTX
+
+    Description              : 
+    Enabled                  : Yes
+    Priority inheritance     : Disabled
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+Mutex object 2: POPPARAM
+
+    Description              : 
+    Enabled                  : Yes
+    Priority inheritance     : Disabled
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+Mutex object 3: M_PLOTQ
+
+    Description              : 
+    Enabled                  : Yes
+    Priority inheritance     : Disabled
+    Waiting order            : FIFO
+    Trace object             : Disabled
+
+Mutex object 4: M_P1
+
+    Description              : 
+    Enabled                  : Yes
+    Priority inheritance     : Disabled
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+Mutex object 5: M_P2
+
+    Description              : 
+    Enabled                  : Yes
+    Priority inheritance     : Disabled
+    Waiting order            : Priority
+    Trace object             : Disabled
+
+
+
+
+------------------------------------------------------------
+User text for file kalarm.h
+------------------------------------------------------------
+
+
+    User includes:
+
+        #include "kproject.h"
+
+
+------------------------------------------------------------
+End of file
+------------------------------------------------------------
+

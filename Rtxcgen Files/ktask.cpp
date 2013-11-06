@@ -1,6 +1,6 @@
 // ktask.cpp - RTXC Quadros Version 1.0.0 Task definitions
 
-// This file was generated on 11/06/2013 11:51:39 -- RTXCgen v1.12 Build 411
+// This file was generated on 11/06/2013 21:55:37 -- RTXCgen v1.12 Build 411
 
 /*
  *    RTXC Quadros Version 1.0.0
@@ -42,11 +42,10 @@ static const char taskname[1 + NTASKS][TASK_NAMMAX + 1] =
     ""   // 0 - Not Used
    ,"CONOTASK"   // 1 - 
    ,"CONITASK"   // 2 - 
-   ,"Principal"   // 3 - 
-   ,"Tabuleiro"   // 4 - 
-   ,"Player1"   // 5 - 
-   ,"Player2"   // 6 - 
-   ,"Bola"   // 7 - 
+   ,"_Principal"   // 3 - 
+   ,"_Tabuleiro"   // 4 - 
+   ,"_Player1"   // 5 - 
+   ,"_Player2"   // 6 - 
 };
 #endif // } HAS_TaskStaticNames
 
@@ -84,25 +83,21 @@ extern void task_CONOTASK(void);
 static STK_ALIGNTYPE stack2[STKSZ2 / SIZEOF_STK_ALIGNTYPE];
 extern void task_CONITASK(void);
 
-#define STKSZ3 512 // 3 Principal - 
+#define STKSZ3 512 // 3 _Principal - 
 static STK_ALIGNTYPE stack3[STKSZ3 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Principal(void);
+extern void task__Principal(void);
 
-#define STKSZ4 512 // 4 Tabuleiro - 
+#define STKSZ4 512 // 4 _Tabuleiro - 
 static STK_ALIGNTYPE stack4[STKSZ4 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Tabuleiro(void);
+extern void task__Tabuleiro(void);
 
-#define STKSZ5 512 // 5 Player1 - 
+#define STKSZ5 512 // 5 _Player1 - 
 static STK_ALIGNTYPE stack5[STKSZ5 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Player1(void);
+extern void task__Player1(void);
 
-#define STKSZ6 512 // 6 Player2 - 
+#define STKSZ6 512 // 6 _Player2 - 
 static STK_ALIGNTYPE stack6[STKSZ6 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Player2(void);
-
-#define STKSZ7 512 // 7 Bola - 
-static STK_ALIGNTYPE stack7[STKSZ7 / SIZEOF_STK_ALIGNTYPE];
-extern void task_Bola(void);
+extern void task__Player2(void);
 
 
 // Starting Order Task List
@@ -110,11 +105,10 @@ extern const TASK startls[] =
 {
    CONITASK, // (3) 2 - 
    CONOTASK, // (4) 1 - 
-   Principal, // (10) 3 - 
-   Tabuleiro, // (10) 4 - 
-   Player1, // (10) 5 - 
-   Player2, // (10) 6 - 
-   Bola, // (10) 7 - 
+   _Principal, // (10) 3 - 
+   _Tabuleiro, // (10) 4 - 
+   _Player1, // (10) 5 - 
+   _Player2, // (10) 6 - 
    0 // Null-terminated Task List
 };
 
@@ -124,11 +118,10 @@ extern const TASKPROP taskprop[1 + NTASKS] =
     {  (void (*)(void))0, (char *)0, 0, 0 } // 0 - Not Used
    ,{  task_CONOTASK, (char *)stack1, STKSZ1, 4 } // 1 CONOTASK - 
    ,{  task_CONITASK, (char *)stack2, STKSZ2, 3 } // 2 CONITASK - 
-   ,{  task_Principal, (char *)stack3, STKSZ3, 10 } // 3 Principal - 
-   ,{  task_Tabuleiro, (char *)stack4, STKSZ4, 9 } // 4 Tabuleiro - 
-   ,{  task_Player1, (char *)stack5, STKSZ5, 9 } // 5 Player1 - 
-   ,{  task_Player2, (char *)stack6, STKSZ6, 9 } // 6 Player2 - 
-   ,{  task_Bola, (char *)stack7, STKSZ7, 9 } // 7 Bola - 
+   ,{  task__Principal, (char *)stack3, STKSZ3, 10 } // 3 _Principal - 
+   ,{  task__Tabuleiro, (char *)stack4, STKSZ4, 9 } // 4 _Tabuleiro - 
+   ,{  task__Player1, (char *)stack5, STKSZ5, 9 } // 5 _Player1 - 
+   ,{  task__Player2, (char *)stack6, STKSZ6, 9 } // 6 _Player2 - 
 };
 
 // Begin - Revision Information, Bottom

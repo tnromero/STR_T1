@@ -451,9 +451,9 @@ Scheduling Policy=0
 Objects=OBJS LEVEL1
 
 [OBJS LEVEL1]
-DISPLAY=
+_Display=
 
-[DISPLAY]
+[_Display]
 Description=
 Dynamics Allowed=0
 Number of Dynamics=0
@@ -462,7 +462,7 @@ Trace Object=0
 Trace Actor=0
 Enabled=1
 Class Name=Thread
-Entry Point=thrd_DISPLAY
+Entry Point=thrd__Display
 
 [Thread]
 Thread=2
@@ -612,12 +612,11 @@ Objects=OBJS Task
 [OBJS Task]
 CONOTASK=
 CONITASK=
-Principal=
-Tabuleiro=
-Player1=
-Player2=
-Bola=
-Mov_Bola=
+_Principal=
+_Tabuleiro=
+_Player1=
+_Player2=
+_Mov_Bola=
 
 [CONOTASK]
 Description=
@@ -651,7 +650,7 @@ Starting Order Number=3
 Manual=0
 Label=
 
-[Principal]
+[_Principal]
 Description=
 Dynamics Allowed=1
 Number of Dynamics=0
@@ -660,14 +659,14 @@ Trace Object=0
 Trace Actor=0
 Enabled=1
 Class Name=Task
-Entry Point=task_Principal
+Entry Point=task__Principal
 Initial Priority=10
 Stack Size=512
 Starting Order Number=10
 Manual=0
 Label=
 
-[Tabuleiro]
+[_Tabuleiro]
 Description=
 Dynamics Allowed=1
 Number of Dynamics=0
@@ -676,14 +675,14 @@ Trace Object=0
 Trace Actor=0
 Enabled=1
 Class Name=Task
-Entry Point=task_Tabuleiro
+Entry Point=task__Tabuleiro
 Initial Priority=9
 Stack Size=512
 Starting Order Number=10
 Manual=0
 Label=
 
-[Player1]
+[_Player1]
 Description=
 Dynamics Allowed=1
 Number of Dynamics=0
@@ -692,14 +691,14 @@ Trace Object=0
 Trace Actor=0
 Enabled=1
 Class Name=Task
-Entry Point=task_Player1
+Entry Point=task__Player1
 Initial Priority=9
 Stack Size=512
 Starting Order Number=10
 Manual=0
 Label=
 
-[Player2]
+[_Player2]
 Description=
 Dynamics Allowed=1
 Number of Dynamics=0
@@ -708,30 +707,14 @@ Trace Object=0
 Trace Actor=0
 Enabled=1
 Class Name=Task
-Entry Point=task_Player2
+Entry Point=task__Player2
 Initial Priority=9
 Stack Size=512
 Starting Order Number=10
 Manual=0
 Label=
 
-[Bola]
-Description=
-Dynamics Allowed=1
-Number of Dynamics=0
-Is MP=0
-Trace Object=0
-Trace Actor=0
-Enabled=1
-Class Name=Task
-Entry Point=task_Bola
-Initial Priority=9
-Stack Size=512
-Starting Order Number=10
-Manual=0
-Label=
-
-[Mov_Bola]
+[_Mov_Bola]
 Description=
 Dynamics Allowed=1
 Number of Dynamics=0
@@ -740,7 +723,7 @@ Trace Object=0
 Trace Actor=0
 Enabled=0
 Class Name=Task
-Entry Point=task_Mov_Bola
+Entry Point=task__Mov_Bola
 Initial Priority=10
 Stack Size=512
 Starting Order Number=10

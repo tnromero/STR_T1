@@ -101,14 +101,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\C Source\main.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Bola.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\DISPLAY.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Mov_Bola.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Player1.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Player2.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Principal.cpp" />
-    <ClCompile Include="..\Rtxcgen Files\Tabuleiro.cpp" />
     <ClCompile Include="..\Rtxcgen Files\winbgi.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Display.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Mov_Bola.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Player1.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Player2.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Principal.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Tabuleiro.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

@@ -17,6 +17,7 @@
 #include "kmutx.h"
 #include "kqueue.h"
 #include <tchar.h>
+#include <stdio.h>
 
 extern KSRC rtxcinit(void);
 extern const TASK startls[];
@@ -25,6 +26,9 @@ volatile int brkflag = 0;
 
 extern void excpt_UART0ISR(void);
 extern void excpt_TMR0ISR(void);
+
+int qtdBola=2;
+int velocidade=1;
 
 /*
    timer interrupt service handler
@@ -48,6 +52,17 @@ void isvcexcpt_UART0ISR(void)
 int _tmain(int argc, _TCHAR* argv[])
 {
    int i;
+
+   // Leitura de dados
+   printf("::::::::::PONG::::::::::\n\n");
+   printf("Quantidade de bolas (1-5): ");
+   do{
+      scanf_s("%d",&qtdBola);
+   }while(qtdBola<1 || qtdBola>5);
+   printf("Velocidade do jogo (1-8): ");
+   do {
+      scanf_s("%d",&velocidade);
+   }while(velocidade<1 || velocidade>8);
 
     /* initialize RTXC Quadros */
    if(rtxcinit() != RC_GOOD)
