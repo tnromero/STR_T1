@@ -25,7 +25,7 @@ void task__Mov_Player2(void)
 	while(1)
 	{
 		// Bola mais proxima
-		for(int i=1;i<qtdBola;i++)
+		for(int i=0;i<qtdBola;i++)
 		{
 			if(bola[i].v.x>bola[indBola].v.x)
 			{

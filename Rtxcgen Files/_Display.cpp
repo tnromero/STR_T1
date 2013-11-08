@@ -25,39 +25,49 @@ void thrd__Display(void *ThreadArg, void *ThreadEnvArg)
 {
 	// Local Declarations
 	char SscoreP1[3], SscoreP2[3];
-	char SVelocidade[20], SQtdBola[20], SQtdPlayer[20];
+	char SVelocidade[3], SQtdBola[3], SQtdPlayer[3];
 	
 	// Inicializacao
 	setbkcolor(BLACK);
 	cleardevice();
 	
-	// Print Elementos
-	sprintf_s(SVelocidade, "%s = %d", "Velocidade", velocidade);
-	sprintf_s(SQtdBola, "%s = %d", "Num Bolas", qtdBola);
-	sprintf_s(SQtdPlayer, "%s = %d", "Num Players", qtdPlayer);
-	
-	settextstyle(10, HORIZ_DIR, 2);
-	setcolor(WHITE);
-	outtextxy(300,450,SQtdBola);
-	outtextxy(300,490,SVelocidade);
-	outtextxy(300,530,SQtdPlayer);
-	
 	// Score
 	sprintf_s(SscoreP1, "%2d", scoreP1);
 	sprintf_s(SscoreP2, "%2d", scoreP2);
 	
-	settextstyle(10, HORIZ_DIR, 2);
+	settextstyle(3, HORIZ_DIR, 1);
+	
 	setcolor(WHITE);
-	outtextxy(10,450,"Score:");
-	outtextxy(10,470,"---------------");
+	outtextxy(10,425,"---------------------------");
+	outtextxy(10,490,"---------------------------");
+	outtextxy(10,410,"Score:");
 	
 	setcolor(player1.fillcolor);
-	outtextxy(10,500,"Player 1:");
-	outtextxy(150,500,SscoreP1);
-	
+	outtextxy(10,445,"Player 1:");
+	outtextxy(150,445,SscoreP1);
+	outtextxy(180,445,"( w / s )");
+		
 	setcolor(player2.fillcolor);
-	outtextxy(10,530,"Player 2:");
-	outtextxy(150,530,SscoreP2);
+	outtextxy(10,470,"Player 2:");
+	outtextxy(150,470,SscoreP2);
+	outtextxy(180,470,"( i / k )");
+	
+	// Print Elementos
+	sprintf_s(SQtdBola, "%2d", qtdBola);
+	sprintf_s(SQtdPlayer, "%2d", qtdPlayer);
+	sprintf_s(SVelocidade, "%2d", velocidade);
+		
+	settextstyle(3, HORIZ_DIR, 1);
+	setcolor(WHITE);
+	outtextxy(440,425,"------------------------");
+	outtextxy(440,410,"Definicoes:");
+	outtextxy(440,445,"Velocidade:");
+	outtextxy(570,445,SVelocidade);
+	outtextxy(440,470,"Bolas:");
+	outtextxy(570,470,SQtdBola);
+	outtextxy(440,495,"Players:");
+	outtextxy(570,495,SQtdPlayer);
+	
 
 	// Cor tabuleiro
 	setfillstyle(t.filltype, t.fillcolor);
