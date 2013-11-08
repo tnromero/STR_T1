@@ -19,6 +19,9 @@ extern int scoreP1;
 extern int scoreP2;
 extern int velocidade;
 
+#define posX 299
+#define posY 199
+
 void task__Mov_Bola(void);
 
 void task__Mov_Bola(void)
@@ -38,8 +41,8 @@ void task__Mov_Bola(void)
 	incY=((rand()%3)+3)*direcaoInicial;
 	
 	// Inicializar Bola
-	bola[*i].v.x=299;
-	bola[*i].v.y=199;
+	bola[*i].v.x=posX;
+	bola[*i].v.y=posY;
 	bola[*i].raio=10;
 	bola[*i].fillcolor=WHITE;
 	while(1)
@@ -48,34 +51,49 @@ void task__Mov_Bola(void)
 		if(incX>0)
 		{
 			// X -> Direita
-			if(	(bola[*i].v.y+bola[*i].raio<=player2.v2.y && bola[*i].v.y-bola[*i].raio>=player2.v1.y) 
-					&& (bola[*i].v.x+bola[*i].raio+incX>=player2.v1.x) ) {
+			// Bola bate no jogador 2
+			if((bola[*i].v.y+bola[*i].raio<=player2.v2.y && bola[*i].v.y-bola[*i].raio>=player2.v1.y) 
+					&& (bola[*i].v.x+bola[*i].raio+incX>=player2.v1.x) )
+			{
 				
-				if(bola[*i].v.x+bola[*i].raio+incX==player2.v1.x) {
+				if(bola[*i].v.x+bola[*i].raio+incX==player2.v1.x)
+				{
 					bola[*i].v.x+=incX;
-				} else {
-					while(bola[*i].v.x+bola[*i].raio<player2.v1.x) {
+				}
+				else
+				{
+					while(bola[*i].v.x+bola[*i].raio<player2.v1.x)
+					{
 						bola[*i].v.x++;
 					}	
 				}
 				incX=-incX;
 			
-			}else if(bola[*i].v.x+bola[*i].raio+incX<594) {
+			}
+			// Bola andando
+			else if(bola[*i].v.x+bola[*i].raio+incX<DIREITA)
+			{
 				bola[*i].v.x+=incX;
-				if(bola[*i].v.x+bola[*i].raio>585){
+				if(bola[*i].v.x+bola[*i].raio>DIREITA-bola[*i].raio)
+				{
 					scoreP1++;
-					bola[*i].v.x=299;
-					bola[*i].v.y=199;
+					bola[*i].v.x=posX;
+					bola[*i].v.y=posY;
 					incX=-((rand()%3)+3);
 					incY=((rand()%3)+3);
 				}
-			} else {
-				while(bola[*i].v.x+bola[*i].raio<594-1) {
+			}
+			// Bola marca ponto 
+			else
+			{
+				while(bola[*i].v.x+bola[*i].raio<DIREITA-1)
+				{
 					bola[*i].v.x++;
-					if(bola[*i].v.x+bola[*i].raio>585){
+					if(bola[*i].v.x+bola[*i].raio>DIREITA-bola[*i].raio)
+					{
 						scoreP1++;
-						bola[*i].v.x=299;
-						bola[*i].v.y=199;
+						bola[*i].v.x=posX;
+						bola[*i].v.y=posY;
 						incX=-((rand()%3)+3);
 						incY=((rand()%3)+3);
 			
@@ -88,35 +106,50 @@ void task__Mov_Bola(void)
 		else
 		{
 			// X -> Esquerda
-			if(	(bola[*i].v.y+bola[*i].raio<=player1.v2.y && bola[*i].v.y-bola[*i].raio>=player1.v1.y) 
-						&& (bola[*i].v.x-bola[*i].raio+incX<=player1.v2.x) ) {
+			// Bater no jogador 1
+			if((bola[*i].v.y+bola[*i].raio<=player1.v2.y && bola[*i].v.y-bola[*i].raio>=player1.v1.y) 
+						&& (bola[*i].v.x-bola[*i].raio+incX<=player1.v2.x) )
+			{
 					
-				if(bola[*i].v.x-bola[*i].raio+incX==player2.v2.x) {
+				if(bola[*i].v.x-bola[*i].raio+incX==player2.v2.x)
+				{
 					bola[*i].v.x+=incX;
-				} else {
-					while(bola[*i].v.x-bola[*i].raio>player2.v1.x) {
+				}
+				else
+				{
+					while(bola[*i].v.x-bola[*i].raio>player2.v1.x)
+					{
 						bola[*i].v.x--;
 					}	
 				}
 				incX=-incX;
 			
-			}else if(bola[*i].v.x-bola[*i].raio+incX>5) {
+			}
+			// Bola andando
+			else if(bola[*i].v.x-bola[*i].raio+incX>ESQUERDA)
+			{
 				bola[*i].v.x+=incX;
-				if(bola[*i].v.x-bola[*i].raio<10){
+				if(bola[*i].v.x-bola[*i].raio<ESQUERDA+bola[*i].raio)
+				{
 					scoreP2++;
-					bola[*i].v.x=299;
-					bola[*i].v.y=199;
+					bola[*i].v.x=posX;
+					bola[*i].v.y=posY;
 					incX=((rand()%3)+3);
 					incY=((rand()%3)+3);
 				}
 			
-			} else {
-				while(bola[*i].v.x-bola[*i].raio>5+1) {
+			}
+			// Bola marca ponto
+			else
+			{
+				while(bola[*i].v.x-bola[*i].raio>ESQUERDA+1)
+				{
 					bola[*i].v.x--;
-					if(bola[*i].v.x-bola[*i].raio<10){
+					if(bola[*i].v.x-bola[*i].raio<ESQUERDA+bola[*i].raio)
+					{
 						scoreP2++;
-						bola[*i].v.x=299;
-						bola[*i].v.y=199;
+						bola[*i].v.x=posX;
+						bola[*i].v.y=posY;
 						incX=((rand()%3)+3);
 						incY=((rand()%3)+3);
 						break;	
@@ -129,10 +162,14 @@ void task__Mov_Bola(void)
 		if(incY>0)
 		{
 			// Y -> Cima
-			if(bola[*i].v.y+bola[*i].raio+incY<INFERIOR) {
+			if(bola[*i].v.y+bola[*i].raio+incY<INFERIOR) 
+			{
 				bola[*i].v.y+=incY;
-			} else {
-				while(bola[*i].v.y+bola[*i].raio<INFERIOR-1) {
+			}
+			else
+			{
+				while(bola[*i].v.y+bola[*i].raio<INFERIOR-1)
+				{
 					bola[*i].v.y++;
 				}
 				incY=-incY;
@@ -141,10 +178,14 @@ void task__Mov_Bola(void)
 		else
 		{
 			// Y -> Baixo
-			if(bola[*i].v.y-bola[*i].raio+incY>TOPO) {
+			if(bola[*i].v.y-bola[*i].raio+incY>TOPO)
+			{
 				bola[*i].v.y+=incY;
-			} else {
-				while(bola[*i].v.y-bola[*i].raio>TOPO+1) {
+			}
+			else
+			{
+				while(bola[*i].v.y-bola[*i].raio>TOPO+1)
+				{
 					bola[*i].v.y--;
 				}
 				incY=-incY;

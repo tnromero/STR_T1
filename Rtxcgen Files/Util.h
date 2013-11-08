@@ -5,7 +5,7 @@
 ** Constantes
 */
 // Incremento dos Players
-#define INC_PLAYER 15
+#define INC_PLAYER 20
 
 // Tabuleiro - Parte Externa
 #define EXT_TOPO 0

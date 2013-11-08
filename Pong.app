@@ -617,6 +617,8 @@ _Tabuleiro=
 _Player1=
 _Player2=
 _Mov_Bola=
+_Mov_Player2=
+_Mov_Player1=
 
 [CONOTASK]
 Description=
@@ -724,6 +726,38 @@ Trace Actor=0
 Enabled=0
 Class Name=Task
 Entry Point=task__Mov_Bola
+Initial Priority=10
+Stack Size=512
+Starting Order Number=10
+Manual=0
+Label=
+
+[_Mov_Player2]
+Description=
+Dynamics Allowed=1
+Number of Dynamics=0
+Is MP=0
+Trace Object=0
+Trace Actor=0
+Enabled=0
+Class Name=Task
+Entry Point=task__Mov_Player2
+Initial Priority=10
+Stack Size=512
+Starting Order Number=10
+Manual=0
+Label=
+
+[_Mov_Player1]
+Description=
+Dynamics Allowed=1
+Number of Dynamics=0
+Is MP=0
+Trace Object=0
+Trace Actor=0
+Enabled=0
+Class Name=Task
+Entry Point=task__Mov_Player1
 Initial Priority=10
 Stack Size=512
 Starting Order Number=10

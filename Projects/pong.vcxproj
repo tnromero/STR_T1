@@ -104,6 +104,8 @@
     <ClCompile Include="..\Rtxcgen Files\winbgi.cpp" />
     <ClCompile Include="..\Rtxcgen Files\_Display.cpp" />
     <ClCompile Include="..\Rtxcgen Files\_Mov_Bola.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Mov_Player1.cpp" />
+    <ClCompile Include="..\Rtxcgen Files\_Mov_Player2.cpp" />
     <ClCompile Include="..\Rtxcgen Files\_Player1.cpp" />
     <ClCompile Include="..\Rtxcgen Files\_Player2.cpp" />
     <ClCompile Include="..\Rtxcgen Files\_Principal.cpp" />

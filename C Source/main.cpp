@@ -29,6 +29,7 @@ extern void excpt_TMR0ISR(void);
 
 int qtdBola=2;
 int velocidade=1;
+int qtdPlayer=2;
 
 /*
    timer interrupt service handler
@@ -58,11 +59,18 @@ int _tmain(int argc, _TCHAR* argv[])
    printf("Quantidade de bolas (1-5): ");
    do{
       scanf_s("%d",&qtdBola);
+	  fflush(stdin);
    }while(qtdBola<1 || qtdBola>5);
-   printf("Velocidade do jogo (1-8): ");
+   printf("Velocidade do jogo  (1-8): ");
    do {
       scanf_s("%d",&velocidade);
+	  fflush(stdin);
    }while(velocidade<1 || velocidade>8);
+   printf("Numero de Jogadores (0-2): ");
+   do {
+	   scanf_s("%d",&qtdPlayer);
+	   fflush(stdin);
+   }while(qtdPlayer<0 || qtdPlayer>2);
 
     /* initialize RTXC Quadros */
    if(rtxcinit() != RC_GOOD)

@@ -17,6 +17,7 @@ extern int scoreP1;
 extern int scoreP2;
 extern int qtdBola;
 extern int velocidade;
+extern int qtdPlayer;
 
 void thrd__Display(void *ThreadArg, void *ThreadEnvArg);
 
@@ -24,7 +25,7 @@ void thrd__Display(void *ThreadArg, void *ThreadEnvArg)
 {
 	// Local Declarations
 	char SscoreP1[3], SscoreP2[3];
-	char SVelocidade[15], SQtdBola[15];
+	char SVelocidade[20], SQtdBola[20], SQtdPlayer[20];
 	
 	// Inicializacao
 	setbkcolor(BLACK);
@@ -33,11 +34,13 @@ void thrd__Display(void *ThreadArg, void *ThreadEnvArg)
 	// Print Elementos
 	sprintf_s(SVelocidade, "%s = %d", "Velocidade", velocidade);
 	sprintf_s(SQtdBola, "%s = %d", "Num Bolas", qtdBola);
+	sprintf_s(SQtdPlayer, "%s = %d", "Num Players", qtdPlayer);
 	
 	settextstyle(10, HORIZ_DIR, 2);
 	setcolor(WHITE);
 	outtextxy(300,450,SQtdBola);
 	outtextxy(300,490,SVelocidade);
+	outtextxy(300,530,SQtdPlayer);
 	
 	// Score
 	sprintf_s(SscoreP1, "%2d", scoreP1);
